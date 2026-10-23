@@ -5,10 +5,20 @@ import ru.oxelen.exception.NotValidFigureParametersException;
 public class Main {
     public static void main(String[] args) {
         printTriangle();
+        System.out.println();
+
         printRectangle();
+        System.out.println();
+
         printCircle();
+        System.out.println();
 
         exceptionCheck();
+        System.out.println();
+
+        //changed version of GeometryLibrary to 1.1.0, added method isSquare
+        checkIsSquare();
+        System.out.println();
     }
 
     static void printTriangle() {
@@ -74,5 +84,31 @@ public class Main {
         } catch (NotValidFigureParametersException e) {
             System.out.println("Exception caught: " + e.getMessage());
         }
+    }
+
+    static void checkIsSquare() {
+        double a = 1;
+        double b = 1;
+
+        Rectangle rectangle = new Rectangle(a, b);
+
+        System.out.printf(
+                """
+                        Rectangle with sides: a = %.2f, b = %.2f
+                        Is square: %b
+                        """,
+                a, b, rectangle.isSquare()
+        );
+        System.out.println();
+
+        b = 5;
+        rectangle.setB(b);
+        System.out.printf(
+                """
+                        Rectangle with sides: a = %.2f, b = %.2f
+                        Is square: %b
+                        """,
+                a, b, rectangle.isSquare()
+        );
     }
 }
