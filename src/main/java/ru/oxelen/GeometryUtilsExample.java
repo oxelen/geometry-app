@@ -8,6 +8,9 @@ public class GeometryUtilsExample {
         //Версия GeometryUtils 1.0.0
         checkAreaEquals();
         checkConvertUnits();
+
+        //Версия GeometryUtils 1.1.0-SNAPSHOT
+        checkPerimeterEquals();
     }
 
     static void checkAreaEquals() {
@@ -45,6 +48,19 @@ public class GeometryUtilsExample {
                 Is Areas equals: %b
                 
                 """, a, b, c, t1.getArea(), radius, c1.getArea(), GeometryUtils.isAreaEquals(t1, c1));
+    }
+
+    static void checkPerimeterEquals() {
+        double radius = 5;
+
+        Figure c1 = new Circle(radius);
+        Figure c2 = new Circle(radius);
+
+        System.out.printf("""
+                Radius 1 = %.2f; Radius 2 = %.2f
+                Is Perimeters equals: %b
+                
+                """, radius, radius, GeometryUtils.isPerimeterEquals(c1, c2));
     }
 
     static void checkConvertUnits() {
