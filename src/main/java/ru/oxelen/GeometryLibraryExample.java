@@ -2,8 +2,9 @@ package ru.oxelen;
 
 import ru.oxelen.exception.NotValidFigureParametersException;
 
-public class Main {
+public class GeometryLibraryExample {
     public static void main(String[] args) {
+        //Версия GeometryLibrary 1.0.0
         printTriangle();
         System.out.println();
 
@@ -16,7 +17,7 @@ public class Main {
         exceptionCheck();
         System.out.println();
 
-        //changed version of GeometryLibrary to 1.1.0, added method isSquare
+        //Изменил версию GeometryLibrary на 1.1.0, где добавил метод boolean isSquare()
         checkIsSquare();
         System.out.println();
     }
